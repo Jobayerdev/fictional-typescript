@@ -1,3 +1,5 @@
+// logger class definition singleton pattern implementation with log4js module for logging purposes.
+
 export class Logger {
 	private static instance: Logger
 	private static config: LoggerConfig = {
