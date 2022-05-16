@@ -1,9 +1,19 @@
-interface ElectronicProduct {
-	name: string
-	memory: number
-	price: number
+import { ClothingFactory } from "./clothing_factory"
+import { ElectronicsFactory } from "./electronics_factory"
 
-	getPrice(): number
-	getName(): string
-	getMemory(): number
+interface Factory {
+	createElectronicsProduct(): ElectronicsFactory
+	clothingProduct(): ClothingFactory
 }
+
+class ProductFactory implements Factory {
+	createElectronicsProduct(): ElectronicsFactory {
+		return new ElectronicsFactory()
+	}
+	clothingProduct(): ClothingFactory {
+		return new ClothingFactory()
+	}
+}
+const factory = new ProductFactory()
+const clothingFactory = factory.clothingProduct()
+const electronicsFactory = factory.createElectronicsProduct()
