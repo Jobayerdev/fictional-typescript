@@ -42,4 +42,5 @@ class Builder {
 
 const builder = new Builder()
 const client1 = builder.createOne('c1').clone()
-console.log('🚀 ~ file: main.ts ~ line 44 ~ client', client1.toString())
+
+console.log(builder['prototypeMap']['c1'].toString())
